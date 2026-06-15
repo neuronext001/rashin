@@ -27,9 +27,3 @@ description = "macOS の絶対パス（/Users/xxx/）の混入を検出"
 regex       = '''/Users/[a-zA-Z0-9_\-]+/'''
 entropy     = 0
 keywords    = ["/Users/"]
-[rules.allowlist]
-# CLAUDE.md 内の例示表記（架空パス）は許可
-paths = [
-  '''CLAUDE\.md''',
-  '''README\.md''',
-]

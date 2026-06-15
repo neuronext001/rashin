@@ -1,0 +1,22 @@
+# === OS / エディタのクルフト ===
+.DS_Store
+*.swp
+*~
+
+# === ユーザー領域：公開しない（rashin の "my-" 規約） ===
+# "my-" で始まるものはすべて非公開：
+#   my-projects/              … 案件データ（顧客名・機密を含みうる）
+#   .claude/agents/my-agents/ … 自作エージェント
+#   my-records/               … 案件に紐づかないやり取りの記録
+#   my-memory/                … memory/ をリネームした場合の永続メモリ
+my-*
+
+# エージェントの永続メモリ（個人的な学習内容）
+.claude/agent-memory/
+
+# Claude Code 自動メモリ（個人情報・案件情報を含みうる）
+memory/
+
+# Claude Code の設定ファイル（ツール許可・ローカル設定を含みうる）
+.claude/settings.json
+.claude/settings.local.json

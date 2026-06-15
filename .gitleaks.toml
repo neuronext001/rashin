@@ -1,0 +1,35 @@
+# gitleaks 設定 — RASHIN リポジトリ用
+# 内蔵ルール（APIキー・パスワード・秘密鍵など200種類以上）に加え、
+# 日本語環境での個人情報パターンを追加。
+
+title = "RASHIN gitleaks config"
+
+[extend]
+useDefault = true  # 内蔵ルールをすべて有効化
+
+[[rules]]
+id          = "email-address"
+description = "メールアドレスの混入を検出"
+regex       = '''[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'''
+entropy     = 0
+keywords    = ["@"]
+[rules.allowlist]
+# GitHub の noreply アドレスは許可
+regexes = [
+  '''noreply@github\.com''',
+  '''noreply@anthropic\.com''',
+  '''@users\.noreply\.github\.com''',
+]
+
+[[rules]]
+id          = "absolute-path-mac"
+description = "macOS の絶対パス（/Users/xxx/）の混入を検出"
+regex       = '''/Users/[a-zA-Z0-9_\-]+/'''
+entropy     = 0
+keywords    = ["/Users/"]
+[rules.allowlist]
+# CLAUDE.md 内の例示表記（架空パス）は許可
+paths = [
+  '''CLAUDE\.md''',
+  '''README\.md''',
+]

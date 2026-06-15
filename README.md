@@ -72,7 +72,7 @@ RASHIN は **Claude Code**（Anthropic 社のAIアシスタント）の上で動
 
 - **案内役の動作**は `CLAUDE.md` に定義（会話と差配に専念し、作業はサブエージェントへ委譲）。
 - **専門スタッフ＝サブエージェント**の定義: 同梱プリセットは `.claude/agents/presets/`、自作は `.claude/agents/my-agents/`（`my-` 接頭辞・非公開）。
-- **設計パターンの活用**: 複雑な依頼では案内役が `docs/agent-patterns.md`（パターン早見表）を参照し、適した進め方（並行化・評価改善ループ等）を提案。必要なときだけ読む軽量カタログなので、ふだんの動作は軽いまま。
+- **設計パターンの活用**: 複雑な依頼では案内役が `docs/agent-patterns.md`（パターン早見表）を参照し、適した進め方（並行化・評価改善ループ等）と実現ツール（`Agent` または `Workflow`）を合わせて提案。必要なときだけ読む軽量カタログなので、ふだんの動作は軽いまま。
 - **案件**は `my-projects/<案件名>/`、作業記録は各フォルダの `_journal.md`。案件外のメモは `my-records/`。
 - **便利コマンド**: `scripts/new-project.sh`（案件作成）/ `new-agent.sh`（担当追加）/ `now.sh`（信頼できる外部ソースから正確な時刻）/ `update.sh`（OSS版の更新確認）。
 - **時刻**は NTP（既定 NICT＝日本標準時）→ 時刻専門 HTTP API（timeapi.io）→ ローカル時計の順で参照。**バージョン**は `VERSION`。
